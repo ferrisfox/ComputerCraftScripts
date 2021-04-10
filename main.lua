@@ -37,7 +37,7 @@ local function run(name)
     end
 end
 
-local arg = tArgs[1]
+local arg = tArgs[0]
 
 print(arg)
 
