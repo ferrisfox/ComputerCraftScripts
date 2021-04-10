@@ -1,1 +1,1 @@
-print("OwO")
+print("KwK")
