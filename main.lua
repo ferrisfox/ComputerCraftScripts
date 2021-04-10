@@ -21,8 +21,9 @@ local function get(file)
 
 end
 
-local function run(program)
-    local func, err = load(program.readAll(), "main.lua", "t", _ENV)
+local function run(name)
+    local program = get(name)
+    local func, err = load(program.readAll(), name, "t", _ENV)
     if not func then
         printError(err)
         return
@@ -36,6 +37,8 @@ end
 
 local arg = tArgs[1]
 
+print(arg)
+
 if arg == "AS" or arg == "as" then
-    run(get("as"))
+    run("as")
 end
