@@ -5,7 +5,7 @@ if #tArgs ~= 1 then
     return
 end
 
-local function get(file)
+local get = function(file)
     -- TODO: research cache busting usecase and implementaion on github
     local cacheBuster = ("%x"):format(math.random(0, 2 ^ 30))
     local response, err = http.get(
@@ -21,7 +21,7 @@ local function get(file)
 
 end
 
-local function run(name)
+local run = function(name)
     local program = get(name)
     local func, err = load(program.readAll(), name, "t", _ENV)
     if not func then
@@ -35,9 +35,7 @@ local function run(name)
     end
 end
 
-local arg = tArgs[0]
-
-print(arg)
+local arg = tArgs[1]
 
 if arg == "AS" or arg == "as" then
     run("as")
