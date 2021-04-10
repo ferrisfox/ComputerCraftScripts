@@ -1,7 +1,5 @@
 local tArgs = { ... }
 
-print(tArgs)
-
 if #tArgs ~= 1 then
     print("usage")
     return
