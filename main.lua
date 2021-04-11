@@ -23,7 +23,7 @@ end
 
 local run = function(name)
     local program = get(name)
-    local func, err = load(program.readAll(), name, "t", _ENV)
+    local func, err = load(program, name, "t", _ENV)
     if not func then
         printError(err)
         return
