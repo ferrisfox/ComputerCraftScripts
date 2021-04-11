@@ -23,7 +23,7 @@ while true do
 
     print( "The phase of the moon is "..moon_phase[nDay%8] )
 
-    print( "The eclipse index for today is "..nDay&36 )
+    print( "The eclipse index for today is "..nDay%36 )
 
 
 
